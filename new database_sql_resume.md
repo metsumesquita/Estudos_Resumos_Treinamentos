@@ -1376,9 +1376,15 @@ Azure Blob Storage
  é uma copia da instancia primaria que reflete as alteraçoes primarias em quase tempo real,pode funcionar como replica de leitura para soluçoes de leitura
 
 ---
+arwuitetura de banco de dados -cleinte servidor 
+Está arquitetura foi desenvolvida para lidar com ambiente de compaixão em que já um grande quando idade com lutadores,servidores de arquivo ,8’pressoras,estações de trabalho,servidores de banco de dados, servidores de wide são conectados por uma rede 
 
+As máquinas cliente olerecem ao ajudaria as interfaces apropriadas para esses servidores serem utilizados , bem como poder de processamento local para execução de aplicações locais 
 
-ESAF - MI - 2012 - Nível Superior
+Os cliente host (máquina) utilizam algum recurso de rede computational,isto é o cliente e uma máquina que focerece capacidade de intecarr com usuário e o processamento local 
+
+já o servidor especializado tem: posso-me uma função específica como servidor de arquivos que mantém os arquivos dos cliente que podem ser utilizado ao conectar uma série de computadores como cliente.     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ESAF - MI - 2012 - Nível Superior
 O Administrador de Dados
 auxilia os gerentes de projeto na definição dos programas de seus projetos.  
 desenvolve um modelo de dados com abrangência operacional.
