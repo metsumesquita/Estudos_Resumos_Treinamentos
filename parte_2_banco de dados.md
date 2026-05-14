@@ -5,7 +5,7 @@
 -ferramentas de banco de dados
 - Atores no Ambiente de Banco de Dados (Quem interage com o SGBD)
 
-
+---
 
 #Arquitetura de cliente Servido em Banco de dados
 A arquitetura cliente-servidor é amplamente utilizada em sistemas de banco de dados para separar as responsabilidades de apresentação e processamento (cliente) do gerenciamento dos dados (servidor). Vamos entender essa arquitetura na prática, especialmente no contexto do uso de IDEs e ferramentas de conexão.

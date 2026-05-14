@@ -10,27 +10,31 @@
 -Constraints
 -Dicionario de dados
 
-# O que é o Modelo de Entidade e Relacionamento (MER)?
+---
 
-O Modelo Entidade-Relacionamento é um modelo conceitual usado para identificar como as entidades (pessoas, objetos ou conceitos) com suas propriedades e características (atributos) se relacionam entre si dentro de um sistema (relacionamento). Ele é muito utilizado devido à sua simplicidade e eficiência.
+O que é o Modelo Entidade-Relacionamento (MER) ?
+É um modelo conceitual de alto nível que descreve a estrutura de uma base de dados de forma independente de software ou hardware.
+Logo o MER define quais dados serão armazenados e as regras de negócio que os regem.
+De forma pratica **ele**(o MER) é utilizado para descrever os objetos do mundo real através de entidades, com suas propriedades que são os atributos e os seus relacionamentos.
+---
+O que é Diagrama Entidade-Relacionamento (DER)?
+É a representação gráfica e visual do MER. Ele utiliza símbolos padronizados para facilitar a comunicação entre projetistas de bancos de dados e utilizadores
 
-Ferramentas como [draw.io](http://draw.io/) ou brModelo permitem criar diagramas que representam o esquema de ligações entre tabelas. Esse diagrama é uma visão de alto nível (big picture) do minimundo.
+---
 
+**o MER e o DER**
 
+O MER é o que você quer fazer efetivamente, é a ferramenta para criar modelos de dados e seus relacionamentos, em geral que depois será produzido em um banco de dados relacional. O DER é só uma maneira visual de montar e analisar este modelo.
 
-## Modelagem de dados (MODELO ENTIDADE RELACIONAMENTO – MER)
+O MER é abstrato, é só um conceito, podemos dizer que ele só existe no pensamento, embora você possa colocá-lo no papel de forma desorganizada. 
+O DER é algo com regras próprias de como desenhar esse modelo que representará a organização de dados que usará no banco de dados, então podemos dizer que ele é um pouco mais concreto, até por ser visível e passível de transferência entre pessoas e até ferramentas na comunicação do que será (ou foi) feito. Claro, ele ainda é uma abstração.
 
-Antes de implementar, é necessário criar um modelo conceitual que descreva as entidades e seus relacionamentos.
+Só dá para apresentar o DER, só ele é visual. O MER dá para explicar, mas no momento que for montar um exemplo de forma organizada e visual está fazendo um DER. 
 
-O modelo de Peter Chen (década de 70) utiliza símbolos gráficos para essa representação.
+---
 
-
-
-# O que é o diagrama entidade relacionamento (DER)?
-
-Já o Diagrama Entidade Relacionamento (DER) é uma representação gráfica do MER (continua conceitual) e do modelo lógico do banco de dados, ou seja, demonstra como esse banco funcionará, como será a estrutura do BD. Para construir o DER adequadamente, deve-se utilizar um conjunto definido de símbolos, que você conhecerá nesta unidade.
-
-Conheça os conceitos do Modelo ER e seus símbolos indicativos no Diagrama ER.
+Os Componentes Principais
+Para construir um DER, utilizamos três elementos básicos:
 
 ### 1. Entidade
 
@@ -148,11 +152,15 @@ Existem vários modelos de bancos de dados, desenvolvidos ao longo do tempo, e o
 
 O banco de dados relacional é um dos pilares da gestão de informações em ambientes computacionais. Desde sua criação na década de 1970 por Edgar F. Codd no livro "A Relational Model of Data for Large Shared Data Banks", esse modelo tem sido amplamente adotado em diversas aplicações, graças à sua estrutura organizada e eficiente. Neste artigo, exploraremos os conceitos fundamentais do banco de dados relacional, suas aplicações práticas e a importância desse modelo na era da informação.
 
-O modelo relacional é baseado na ideia de que os dados podem ser organizados em tabelas, também conhecidas como relações, compostas por linhas e colunas. Cada tabela representa uma entidade ou conceito, e as colunas representam os atributos dessa entidade. Por exemplo, em um banco de dados de uma loja online, poderíamos ter uma tabela "Clientes" com colunas como "ID do Cliente", "Nome" e "Endereço".
+
+o Modelo Relacional é a etapa seguinte (modelo lógico), onde as entidades se transformam em tabelas, os atributos em colunas e as linhas em tuplas. É nesta fase que as relações muitos-para-muitos são geralmente resolvidas com a criação de tabelas associativas.
+Por exemplo, em um banco de dados de uma loja online, poderíamos ter uma tabela "Clientes" com colunas como "ID do Cliente", "Nome" e "Endereço".
 
 - Tabelas (relações)
 - Linhas (registros)
 - Colunas (atributos)
+
+---
 
 ## Chaves e Relacionamentos
 
@@ -179,6 +187,7 @@ Uma entidade pode ter mais de um atributo chave, dependendo da necessidade do si
 2. **Sistemas de Gerenciamento de Pedidos**: Para empresas que lidam com pedidos, o banco de dados relacional é essencial para rastrear pedidos, produtos e clientes, facilitando o atendimento eficiente e a logística.
 3. **Sistemas de Gerenciamento de Recursos Humanos**: O armazenamento de informações sobre funcionários, folhas de pagamento e benefícios é vital para as operações de RH.
 
+---
 
 ## 📌 Constraints (Restrições) em Banco de Dados
 

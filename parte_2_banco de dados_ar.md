@@ -18,7 +18,6 @@ Incluem fotos, vídeos, áudio, arquivos binários, etc. Podem ser armazenados n
 
 ---
 
-
 #Diferentes tipos , Diferentes formas de armazenar os dados
 
 
