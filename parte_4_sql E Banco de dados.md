@@ -66,15 +66,43 @@ CREATE DATABASE Controle_De_Caixa;
 
 #  Criando uma  tabela - com o comando `CREATE TABLE`
 
-```sql
-DROP TABLE IF EXISTS station;
+#PRIMARY KEY
 
-CREATE TABLE station (
-    id_station INT AUTO_INCREMENT PRIMARY KEY,
-    city VARCHAR(21) NOT NULL,
-    state VARCHAR(2) NOT NULL,
-    lat_n DECIMAL(10,6),
-    long_w DECIMAL(10,6)
+```sql
+CREATE TABLE  cliente(
+	cpf VARCHAR(11)NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    nascimento DATE NOT NULL,
+    endereço_entrega VARCHAR (200)NOT NULL,
+    endereço_faturamento VARCHAR (200)NOT NULL,
+    PRIMARY KEY (cpf)
+);
+```
+
+---
+
+#FOREIGN KEY 
+
+```sql
+create table pedidos(
+id_pedido integer PRIMARY KEY UNIQUE,
+data_pedido timestamp,
+data_envio timestamp,
+status_pedido boolean,
+FOREIGN KEY (id_cliente)
+REFERENCES produto(id_produto)
+);
+```
+
+```sql
+DROP TABLE IF EXISTS produtos;
+create table produtos(
+id_produto INTEGER PRIMARY KEY auto_increment ,
+nome VARCHAR(100) NOT NULL,
+preço real,
+estoque INTEGER DEFAULT 0 ,
+FOREIGN KEY (id_item)
+REFERENCES marcas(id_marcas)
 );
 ```
 
@@ -183,9 +211,15 @@ select * from Customers order by Country,City;
 ```
 
 SELECT * FROM produtos ORDER BY preco ASC;   -- do mais barato ao mais caro
+ASC = Ascending (Small to Big)
 
 
 SELECT * FROM produtos ORDER BY preco DESC;  -- do mais caro ao mais barato
+DO MAIOR PARA O MENOR
+
+SELECT name, bank_balance
+FROM suspects
+ORDER BY bank_balance DESC;
 
 ---
 
@@ -475,13 +509,20 @@ WHERE condition;
 ---
 #Como usar o ALIAS
 
-
 ```sql
 select names 
 from suspects
 as suspect_name
-
 ```
+
+```sql
+SELECT COUNT(*) AS devedores
+FROM cadastro
+WHERE valor<0;
+```
+
+
+
 ---
 # hands on
 
@@ -623,8 +664,7 @@ CREATE TABLE city (
 ```
 
 ```sql
-INSERT INTO city (nome, country, district, populations) VALUES
-('Tóquio', 'JPN', 'Kanto', 13960000),
+INSERT INTO city (nome, country, district, populations) VALUES('Tóquio', 'JPN', 'Kanto', 13960000),
 ('Délhi', 'IND', 'Delhi', 16787941),
 ('Xangai', 'CHN', 'Xangai', 24256800),
 ('São Paulo', 'BRA', 'Sudeste', 12325232),
@@ -717,22 +757,28 @@ CREATE TABLE cadastro (
  pais_de_origem VARCHAR(120),
  PRIMARY KEY(CPF),
  UNIQUE(CPF)
-)
+);
 ```
 
 ```sql
 INSERT INTO cadastro (CPF, Primeiro_Nome, Sobrenome_Nome, idade, cidade_origem, pais_de_origem)
 VALUES 
-(123456789, 'Lucas', 'Silva Oliveira', 28, 'Belo Horizonte', 'Brasil'),
+(166666789, 'Lucas', 'Silva Oliveira', 28, 'Belo Horizonte', 'Brasil'),
 (234567890, 'Ana', 'Beatriz Souza', 34, 'Porto', 'Portugal'),
 (345678901, 'John', 'Michael Doe', 42, 'Nova York', 'EUA'),
 (456789012, 'Mariana', 'Lopes Ferreira', 22, 'Luanda', 'Angola'),
 (567890123, 'Elena', 'Rodríguez', 31, 'Madri', 'Espanha'),
-(123456789, 'Tiago', 'Silva Oliveira', 28, 'Belo Horizonte', 'Brasil'),
-(234567890, 'Ana', 'Beatriz Souza', 34, 'Porto', 'Portugal'),
-(345678901, 'John', 'Michael Doe', 42, 'Nova York', 'EUA'),
-(456789012, 'Mariana', 'Lopes Ferreira', 22, 'Luanda', 'Angola'),
-(567890123, 'Elena', 'Rodríguez', 31, 'Madri', 'Espanha');
+(124566789, 'Tiago', 'Silva Oliveira', 28, 'Belo Horizonte', 'Brasil'),
+(132457790, 'Ana', 'Beatriz Souza', 34, 'Porto', 'Portugal'),
+(244779908, 'John', 'Michael Doe', 42, 'Nova York', 'EUA'),
+(457258214, 'Mariana', 'Lopes Ferreira', 22, 'Luanda', 'Angola'),
+(567890532, 'Elena', 'Rodríguez', 31, 'Madri', 'Espanha')
+(876543123, 'Fernanda', 'Rodríguez', 34, 'Madri', 'Espanha'),
+(123456789, 'Matheus', 'Silva Da Porciuncula',1, 'Belo Horizonte', 'Brasil'),
+(232344890, 'Igor', 'Leal De Mesquita',20, 'Porto', 'Portugal'),
+(895655901, 'Erick', 'Fagundes Figueira', 15, 'Nova York', 'EUA'),
+(566789012, 'Joana', 'Luizer', 22, 'Luanda', ''),
+(563890125, 'Catherine', 'Olivera',3, 'Madri', 'Portugal');
 
 ```
 
@@ -764,10 +810,9 @@ limit 20;
 
 DESAFIO 4: ​Depois de muito investigar, você viu que não há nenhum problema na tabela, somente um cadastro mal feito, algo bem pontual. Delete o cadastro de Id número 100.
 
-```sql
+```sql 
 DELETE FROM cadastro
  WHERE Id=100;
-
 ```
 
 
@@ -777,6 +822,53 @@ DELETE FROM cadastro
 SELECT AVG(idade) FROM cadastro;
 
 ```
+
+DESAFIO 6: A empresa deseja saber quantos clientes são maiores de idade. Conte o número de clientes na tabela 'cadastro' que têm 18 anos ou mais.​ Retorne a coluna com a contagem com o nome 'Maior_de_Idade​'.
+
+```sql
+SELECT COUNT(*) AS total_maiores_idade
+FROM cadastro
+WHERE idade >= 18;
+```
+
+
+DESAFIO 7: A área financeira precisa que você identifique na tabela 'cadastro' quantos clientes têm entre 30 e 40 anos. Escreva uma query para contar esses clientes.​ A coluna de contagem deve ter o nome "Qtd_Clientes_30_e_40".
+
+```sql
+SELECT COUNT(*) AS Qtd_Clientes_30_e_40
+FROM cadastro
+WHERE idade between 30 and 40;
+```
+
+
+DESAFIO 8: Verifique a distribuição de clientes por faixa etária agrupando-os em 'menores de 18', '18 a 65' e 'maiores de 65'.​ Em outras palavras, conte quantos clientes temos nessas faixas, retornando essas faixas em uma coluna chamada Faixa_Etaria e a quantidade de clientes na coluna Qtd_Clientes.
+
+
+
+
+
+DESAFIO 9: A área de marketing quer enviar promoções apenas para os 10 clientes mais jovens. Selecione os Ids e Primeiros Nomes dos 10 clientes mais jovens.​
+
+```sql
+SELECT id, Primeiro_Nome
+from cadastro 
+order by idade asc
+limit 10;
+```
+
+
+DESAFIO 10: Alguns clientes foram cadastrados erroneamente com 'Idade' igual a zero. Encontre esses clientes e exiba seus Ids e Primeiros Nomes.
+
+```sql
+SELECT id, Primeiro_Nome
+from cadastro
+where idade==0;
+
+```
+
+
+---
+
 # Diagrama de venn e Como são os Possiveis JOINS
 
 sql ver o diagama de venn
