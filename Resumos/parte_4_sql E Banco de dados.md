@@ -893,3 +893,7 @@ o full outer join é a uniao de ambos os conjutnos
 
 
 
+
+
+
+
