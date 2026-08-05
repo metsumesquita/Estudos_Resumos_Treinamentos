@@ -4,11 +4,15 @@
 #big data
 #mercado de dados
 
-Analytical Base Table ou Tabela Base Analítica ou ABT
+
+
+# Analytical Base Table ou Tabela Base Analítica ou ABT
+
 é/funcionada da seguinte forma : é um formato padrao acordado previamente entre as pessoas da equipe que os dados devem ter.
 esse estrutura em formato de tabela, onde cada linha representa uma unica analise, como o indentificador do usario(id do usuario),contendo as caracteristicas preditivas, as variaveis X, como tamanho,cor,validade e outros atributos e o desfecho ou o evento que se deseja preve que é a variavel Y ou tambem o target a ser previsto
+usada especificamente para treinar algoritmos de Inteligência Artificial e Machine Learning
 
-
+Como funciona no dia a dia da área de dadosA criação de uma ABT exige a união de várias bases de dados diferentes de um mesmo sistema ou empresa (por exemplo: unir a tabela de cadastros com a tabela de pagamentos e a de interações do usuário). Esse processo — que envolve filtros, agregações e cruzamento de tabelas — costuma ser feito utilizando bancos de dados ou plataformas de integração para garantir que tudo fique pronto para o treinamento de IA
 
 ----
 
