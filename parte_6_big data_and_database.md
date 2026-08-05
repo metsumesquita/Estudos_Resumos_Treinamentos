@@ -1,7 +1,16 @@
 
 #Assuntos abordados
+#ABT
 #big data
 #mercado de dados
+
+Analytical Base Table ou Tabela Base Analítica ou ABT
+é/funcionada da seguinte forma : é um formato padrao acordado previamente entre as pessoas da equipe que os dados devem ter.
+esse estrutura em formato de tabela, onde cada linha representa uma unica analise, como o indentificador do usario(id do usuario),contendo as caracteristicas preditivas, as variaveis X, como tamanho,cor,validade e outros atributos e o desfecho ou o evento que se deseja preve que é a variavel Y ou tambem o target a ser previsto
+
+
+
+----
 
 #   O que é big data
 
@@ -37,26 +46,3 @@ In real-time, replication is used by databases for making data’s backup copies
 4. Distribution of queries to nodes should be done by the database:
 
 Separation of concerns of evaluation of query from the execution of the query is important for getting more increased performance from queries traversing numerous hubs/nodes. The query is moved to the data by the NoSQL database instead of data moving to the query.
-
-
-
----
-#mercado de dados
-
-Engenheiro de dados
-desenho,costruçao
-sustençaos das soluçoes de dados
-preocupado em manter/organizar a pipeline dos dados de forma mais eficiente
- extraçao de dados de fonte geterogeneas,disponibilizar os dados a serem consumidos pelos analistas e cientistas de dados
-
-o papel do cientista de dados
-modelagem,reconhecimento de padroes e preciçoes
-busca responder perguntas atrelas ao contexto do negocio , buscando insights atras de tecnicas de modelagem
-
-ja o analista de dados
-criaçao de dashboard, apresentaçao visuaal dos dados
-busca compreender o funcionamento do negocio a  partir dos dados , realiza o diagnosticos , identificar possiveis motivos para comportamentos e verificar metricas
-
-PO
-
-[FALTANDO]

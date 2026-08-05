@@ -1,57 +1,51 @@
 # Banco de dados
 
-**preciso achar onde encaixar esse trecho**
+organização de assuntos
+oque é um banco de dados
+Sistemas de Arquivos
+SGBD?
+# O que é uma transação em um banco de dado ?
+como esta relacionado com ACID
+As Propriedades ACID
+Arquitetura do Sistema,(Arquitetura ANSI/SPARC) ou Arquitetura de 3 camadas
+VANTAGENS DE UTILIZAR UM SGBD
+Tipos de Dados e Armazenamento
+-o que sao dados estruturados,semi-estruturados,nao estruturados
+-onde esses dados sao armazenados(falar do datalake , warehouses brevemente)
+- Como isso funciona na prática com IDEs e ferramentas (como as ferramentas de desenvolvimentos se interligam com o banco de dados,ide ,etc)
+ Visão geral da arquitetura cliente-servidor
+Processamento local vs. remoto
+quem é que mexe no sistema -- Atores do banco de dados
+citar o modelo relacional que utiliza o SQL
+O que é o Modelo de Entidade e Relacionamento (MER)
+O que é o diagrama entidade relacionamento (DER)
+Conceito de entidade e seus diferentes tipos entidade
+conceito de atributo e seus diferentes tipos atributos
+O relacionamento e cardinalidade
+Modelo Relacional e Linguagem SQL
+Chaves e Relacionamentos
+#Dicionario de dados
+Dependencias
+Dependencia Funcional
+#niveis de dependecia
+Constraints (Restrições) em Banco de Dados
+Normalização
+O que é SQL?
+O que é RDBMS?
+Principais Comandos SQL
+
+### Tipos de Dados no sql
+exercicios em sql
+
+*O que é Business Intelligence?*
+big data
+NoSQL
 
 
-#O que é modelagem de dados?
-Modelagem relaciona-se à ideia de representar algo que existe ou existirá, ou seja, representar o banco de dados que será criado, demonstrando aspectos relevantes para sua implantação. A ideia é representar como serão construídas as estruturas de dados que darão suporte aos processos de negócio, como esses dados estarão organizados e quais relacionamentos pretende-se estabelecer entre eles.
-
-Vamos pensar no exemplo de um estoque informatizado de um supermercado: o sistema deve identificar os dados de um produto que passou pelo caixa, relacioná-los com o que há no BD e registrar a saída do item. Esses relacionamentos devem ser previstos antes de o banco de dados ser criado, ainda no momento de projeto, por isso a modelagem é fundamental.
-
-1. Independência de dados, que é capacidade de modificar a definição dos esquemas de determinado nível, sem afetar o esquema de nível superior
-2. Independência Lógica dos Dados: trata da capacidade de alterar o esquema conceitual sem precisar modificar os esquemas externos ou programas/aplicações
-3. Independência Física dos Dados: capacidade de alterar o esquema interno sem ter de alterar o esquema conceitual.
----
-
-1. Projetos de Banco de DadosProjetos do BD: estrutura ou projeto de um banco de dados em diferentes níveis de abstração por meio de Modelos:
-Modelo Conceitual (alto nível):  conceitos que são mais próximos ao modo como muitos usuários compreendem os dados -> “diagramas”
-o nivel de abstração é alto,nao possue dependencia,comprensao pelo usuario final sendo facil, exemplo de um modelo conceitural é o modelo entedidade relacionamento que iremos aborda posteriomente
-
-2. Modelo Lógico:  podem ser facilmente entendidos pelos usuários finais, mas que não está muito longe do modo como os dados são organizados e armazenados no computador -> “tabelas”
-ja o modelo logico, o nivel de abstraçao é medio,possue dependecia com algum software (tipo sgbd), a compreensao pelo usuario final é medio, o exemplo de modelo logico que temos é o modelo relacional
 
 
-3. Modelo Físico (baixo nível): descrevem os detalhes de como os dados são armazenados no computador -> “programação”,
-dentre as tres,é o aque o nivel de abstraçao é mais baixo,depende tanto do hardware e do softare(sgbd especitifico),a  compreensao pelo usuario final  é dificil, e nao temos um exemplo kkk
 
 
-Flexibilidade
-
-É fácil adicionar, atualizar ou excluir tabelas, relações e fazer outras alterações em dados sempre que necessário, sem alterar a estrutura geral do banco de dados ou afetar aplicativos existentes.
-
-Conformidade com ACID
-
-Os bancos de dados relacionais são compatíveis com o desempenho da ACID (atomicidade, consistência, isolamento e durabilidade) para garantir a validade dos dados independentemente de erros, falhas ou outros possíveis erros.
-
-Facilidade de usar
-
-É fácil executar consultas complexas usando SQL. Com isso, até mesmo usuários não técnicos aprendam a interagir com o banco de dados.
-
-Colaboração
-
-Várias pessoas podem operar e acessar dados ao mesmo tempo. O bloqueio integrado impede o acesso simultâneo aos dados quando eles estão sendo atualizados. 
-
-Segurança integrada
-
-A segurança baseada em papéis garante que o acesso aos dados seja limitado a usuários específicos.
-
-Normalização do banco de dados
-
-Os bancos de dados relacionais usam uma técnica de design conhecida como normalização que reduz a redundância e melhora a integridade dos dados. 
-
----
-
-# INICIO
 
 # O que é um banco de dado
 Um banco de dados é uma coleção organizada de dados relacionados, representando algum aspecto do mundo real (minimundo). Ele é projetado para refletir as mudanças do mundo real, mantendo os dados atualizados.
@@ -62,7 +56,7 @@ Antigamente era utilizado o sistema de arquivos , os dados eram armazenados em a
 ## Como mexer nos arquivos de um banco de dados ?
 Primeiramente Você não mexe diretamente nos arquivos do banco de dados. Para isso, usamos o SGBD (Sistema Gerenciador de Banco de Dados). Ele é um conjunto de softwares que facilita a definição (criar estruturas), construção (armazenar os dados) e manipulação (consultar e atualizar) das informações. Exemplos comuns que você ouvirá por aí são MySQL, PostgreSQL, Oracle , SQL Serve e SQLite
 
-# Afinal o que esse tal SGDB?
+# Afinal o que esse tal SGBD?
 Os Sistemas de Gerenciamento de Banco de Dados Relacionais (SGBDs) podem desempenhar um papel significativo em diversos contextos. Amplamente utilizados para organizar dados de maneira eficiente, esses softwares se destacam por armazenar e organizar os dados em tabelas inter-relacionadas, baseadas no modelo relacional. Assim, cada tabela é composta por linhas (registros) e colunas (atributos), e as relações entre tabelas são estabelecidas através de chaves primárias e estrangeiras.
 SGBD então será responsável por manter a integridade do banco a medida que ele cresce ao longo dos anos. Essa integração chamamos de sistema de banco de dadados
 Para que essa estrutura robusta ofereça uma base sólida para a gestão eficaz das informações, os SGBDs utilizam a linguagem SQL (Structured Query Language) para realizar consultas e manipulação de dados, oferecendo recursos como transações, controle de concorrência, integridade de dados e segurança.
@@ -121,16 +115,71 @@ impondo restrinçoes de integridade
 permitindo deduçao de açoes usando regras
 implicaçoes adicionais de uso da abordagen de banco de dados
 
-
 #Exemplo de como ocorre a redundancia da informação
 
-um arquivo armazenado em N locais.
-imagine a seguinte situação, em um hospital qualquer , um paciente faz entrada e é feito um arquivo/documento desse paciente,esse arquivo deve ser enviado para 3 recepçoes diferentes,contudo pode ser que por alguma falha,ele nao chege em uma(ou mais) recepçao.
-e posteriormente ocorra uma atualizaçao desse arquivo do paciente, e seja enviado novamente para essas recepçoes, contudo uma delas nao recepçao a atualizaçao,o que torna inconsistente 
-nao consegue manter a integridade e nao consegue reduzir a redundancia
+    um arquivo armazenado em N locais.
+    imagine a seguinte situação, em um hospital qualquer , um paciente faz entrada e é feito um arquivo/documento desse paciente,esse arquivo deve ser enviado para 3 recepçoes diferentes,contudo pode ser que por alguma falha,ele nao chege em uma(ou mais) recepçao.
+    e posteriormente ocorra uma atualizaçao desse arquivo do paciente, e seja enviado novamente para essas recepçoes, contudo uma delas nao recepçao a atualizaçao,o que torna inconsistente 
+    nao consegue manter a integridade e nao consegue reduzir a redundancia
 
 ---
- 
+
+#Arquitetura de cliente Servido em Banco de dados
+A arquitetura cliente-servidor é amplamente utilizada em sistemas de banco de dados para separar as responsabilidades de apresentação e processamento (cliente) do gerenciamento dos dados (servidor). Vamos entender essa arquitetura na prática, especialmente no contexto do uso de IDEs e ferramentas de conexão.
+
+## 1. Visão geral da arquitetura cliente-servidor
+
+Na sua descrição, você menciona um ambiente composto por:
+- **Clientes**: estações de trabalho, impressoras, etc.
+- **Servidores especializados**: servidor de arquivos, servidor de banco de dados, servidor web (wide), todos conectados em rede.
+
+Em um banco de dados cliente-servidor:
+- **Máquinas cliente** executam aplicações (como uma IDE, um programa desktop ou uma aplicação web) que interagem com o usuário e possuem processamento local.
+- **Servidor de banco de dados** é uma máquina (ou conjunto) dedicada a executar o SGBD (Sistema Gerenciador de Banco de Dados), como MySQL, PostgreSQL, SQL Server, etc. Ele recebe requisições SQL, processa, gerencia transações, controle de concorrência e retorna os resultados.
+- A **rede** (LAN, WAN) conecta clientes e servidores, permitindo a comunicação.
+
+## 2. Como isso funciona na prática com IDEs e ferramentas
+
+Quando um desenvolvedor ou administrador utiliza uma IDE ou ferramenta de banco de dados, a arquitetura se manifesta da seguinte forma:
+
+- **A ferramenta (ex.: MySQL Workbench, DBeaver, VS Code com extensões)** atua como um **cliente**. Ela se conecta ao SGBD utilizando um driver (JDBC, ODBC, driver nativo) e um protocolo de rede (como TCP/IP).
+- O desenvolvedor escreve comandos SQL na interface da ferramenta. Ao executar, a ferramenta empacota a consulta em um pacote de rede e envia ao servidor de banco de dados.
+- O **servidor de banco de dados** recebe a consulta, realiza parsing, otimização, execução e acesso aos dados armazenados em disco (ou memória). Em seguida, monta o conjunto de resultados e o envia de volta ao cliente.
+- A ferramenta cliente recebe os dados, formata (tabelas, gráficos) e exibe para o usuário.
+
+Todo esse processo é transparente para o usuário – ele vê apenas a consulta e os resultados, mas por trás há uma comunicação cliente-servidor.
+
+## 3. Exemplos das ferramentas citadas
+
+- **Visual Studio Code, Eclipse, Sublime Text**: são IDEs genéricas que, com extensões (ex.: “SQL Tools”, “Database Client”), permitem conectar a bancos de dados. Elas agem como clientes.
+- **MySQL Workbench, DBeaver, MariaDB (cliente)**: são ferramentas especializadas que já incluem conectividade, gerenciamento de conexões, editores SQL, visualização de esquemas, etc.
+- **Databricks**: é uma plataforma de dados unificada que também segue o modelo cliente-servidor, onde o “cliente” é o notebook ou a interface web, e o “servidor” são os clusters de processamento.
+- **Dolphin** (provavelmente DolphinDB ou um cliente de banco de dados): segue o mesmo princípio – conecta-se a um servidor de banco de dados para execução de consultas.
+
+## 4. Processamento local vs. remoto
+
+Um ponto importante que você destacou é que as **máquinas cliente** possuem poder de processamento local para executar aplicações locais. Em um ambiente de banco de dados:
+
+- O **cliente** pode executar parte da lógica de negócio (ex.: validações, cálculos simples) sem sobrecarregar o servidor.
+- No entanto, o **processamento pesado de dados** (joins, agregações, grandes consultas) é feito preferencialmente no servidor, pois ele é otimizado para isso e evita transferir grandes volumes de dados pela rede.
+- As ferramentas IDEs geralmente só fazem a interface e a exibição dos resultados; o processamento SQL ocorre no servidor.
+
+## 5. Resumo prático
+
+Na prática, para trabalhar com um banco de dados cliente-servidor:
+
+1. **Infraestrutura**: um servidor (físico ou virtual) com SGBD instalado, configurado para aceitar conexões de rede.
+2. **Conexão**: o cliente (sua máquina) utiliza uma ferramenta que define parâmetros de conexão: endereço do servidor, porta, credenciais.
+3. **Execução**: você escreve SQL na ferramenta, e ela se comporta como um cliente enviando comandos ao servidor.
+4. **Retorno**: o servidor processa e devolve os dados, que são exibidos na ferramenta.
+
+Essa arquitetura é fundamental para garantir escalabilidade, segurança e desempenho, separando as responsabilidades e permitindo que vários clientes acessem os mesmos dados simultaneamente.
+
+---
+
+Se você está começando a trabalhar com banco de dados, experimente conectar o DBeaver ou o MySQL Workbench a um servidor local ou remoto e observe, se possível, os logs do servidor para ver como cada consulta é recebida e processada. Isso ajuda a solidificar o entendimento da arquitetura cliente-servidor na prática.
+
+---
 # Atores no Ambiente de Banco de Dados (Quem interage com o SGBD)
 
 Os sistemas de banco de dados não existem no vácuo. Diversas pessoas, com diferentes níveis de conhecimento e responsabilidades, interagem com ele. A literatura, especialmente Elmasri & Navathe, classifica esses "atores" em grupos principais.
@@ -190,190 +239,178 @@ AD (ou Projetista) = Planejamento, modelagem conceitual, dicionário de dados, r
 Programador = Escreve código SQL dentro de aplicações.
 
 Usuário Final = Usa a aplicação ou ferramenta de consulta para fazer o trabalho
----
-
-
-                               MUNDO REALLLL COMO SAO FEITAS AS COISAS
-IDEs e Ferramentas de Conexão
-
-[Ajuste de grafia e organização:]
-
-Alguns ambientes de desenvolvimento integrado (IDEs) e ferramentas de administração de banco de dados incluem:
-
-· Visual Studio Code
-· Eclipse
-· Sublime Text
-· MySQL Workbench
-· DBeaver
-· Databricks
-· Dolphin
-· MariaDB
-
-O desenvolvedor escreve SQL na IDE, que se conecta ao SGBD. O SGBD processa a consulta e retorna os dados, que são exibidos na IDE.
-
----
- em resum
- app
- ide->banco de dados <-dbeaver
- codigo  informação    interface
 
 
 ---
+Abaixo está o texto revisado, com correções lógicas e gramaticais, mantendo todos os tópicos e a estrutura original.
 
-#O que é o Modelo de Entidade e Relacionamento (MER)?
-O Modelo Entidade-Relacionamento é um modelo conceitual usado para identificar como as entidades (pessoas, objetos ou conceitos) com suas propriedades e características (atributos) se relacionam entre si dentro de um sistema (relacionamento). Ele é muito utilizado devido a sua simplicidade e eficiência.
+---
+
+# O que é o Modelo de Entidade e Relacionamento (MER)?
+
+O Modelo Entidade-Relacionamento é um modelo conceitual usado para identificar como as entidades (pessoas, objetos ou conceitos) com suas propriedades e características (atributos) se relacionam entre si dentro de um sistema (relacionamento). Ele é muito utilizado devido à sua simplicidade e eficiência.
+
 Ferramentas como [draw.io](http://draw.io/) ou brModelo permitem criar diagramas que representam o esquema de ligações entre tabelas. Esse diagrama é uma visão de alto nível (big picture) do minimundo.
 
+# O que é o diagrama entidade relacionamento (DER)?
 
+Já o Diagrama Entidade Relacionamento (DER) é uma representação gráfica do MER (continua conceitual) e do modelo lógico do banco de dados, ou seja, demonstra como esse banco funcionará, como será a estrutura do BD. Para construir o DER adequadamente, deve-se utilizar um conjunto definido de símbolos, que você conhecerá nesta unidade.
 
-#O que é o diagrama entidadade relacionamento(DER)?
-Já o Diagrama Entidade Relacionamento (DER) é uma representação gráfica que apresenta o modelo lógico do banco de dados, ou seja, demonstra como esse banco funcionará, como será a estrutura do BD. Para construir o DER adequadamente, deve-se utilizar um conjunto definido de símbolos, que você conhecerá nessa unidade.
+Conheça os conceitos do Modelo ER e seus símbolos indicativos no Diagrama ER.
 
-Conheça os conceitos do Modelo ER e seus símbolos indicativos no Diagrama ER
+## Modelagem de dados (MODELO ENTIDADE RELACIONAMENTO – MER)
 
-##Modelagem de dados (MODELO ENTIDADE RELACIONAMENTO)(MER)
+Antes de implementar, é necessário criar um modelo conceitual que descreva as entidades e seus relacionamentos.
 
-Antes de implementar,é necessario criar um modelo conceitural que descreva as entedidade e seus relacionamentos.
-o modelo de peter chen (decade de 70)utiliza simbolos graficos para essa representação
+O modelo de Peter Chen (década de 70) utiliza símbolos gráficos para essa representação.
 
-1.Entidade
-a entidade representa um objeto do mundo real(como : um aluno, um carro , um barco , um funcionario), uma reversa de avisao simbolizadas por um retangulo
-É a representação de um objeto no mundo real com existência interdependente. Pode ser um objeto com existência física ou conceitual.
+### 1. Entidade
 
-1.1 Entidade Forte
+A entidade representa um objeto do mundo real (como um aluno, um carro, um barco, um funcionário), sendo simbolizada por um retângulo. É a representação de um objeto no mundo real com existência independente. Pode ser um objeto com existência física ou conceitual.
 
-Uma entidade é considerada forte quando existe por ela só, independentemente da existência de outras entidades. Por exemplo, em um sistema acadêmico, a entidade curso é independe de quaisquer outras para existir, portanto, é considerada “forte”.
+#### 1.1 Entidade Forte
 
-1.2 Entidade Fraca
-ao contrário das entidades fortes, as fracas são aquelas que dependem de outras para existir. São identificadas por se relacionarem com entidades específicas.
+Uma entidade é considerada forte quando existe por si só, independentemente da existência de outras entidades. Por exemplo, em um sistema acadêmico, a entidade curso é independente de quaisquer outras para existir; portanto, é considerada “forte”.
+
+#### 1.2 Entidade Fraca
+
+Ao contrário das entidades fortes, as fracas são aquelas que dependem de outras para existir. São identificadas por se relacionarem com entidades específicas.
+
 Pensando em um sistema acadêmico, a entidade ementa de uma disciplina (documento que registra os principais pontos trabalhados em uma disciplina) só tem sentido se houver a entidade disciplina. Não faz sentido que exista uma entidade para armazenar dados da ementa de uma disciplina que não existe, concorda? No DER, a entidade fraca e o seu relacionamento são representados com traços duplos.
-como por exemplo a emenda possue uma diciplina
 
-1.3 Entidade associativa
+Como por exemplo: a ementa pertence a uma disciplina.
 
-Aentidade associativa é criada quando se identifica a necessidade de associar uma entidade a um relaciona- mento existente. Na Modelagem ER não é possível que um relacionamento seja associado a uma entidade, então tornamos esse relacionamento uma entidade associativa para que possamos relacioná-lo com outras entidades. Ao fazer o diagrama ER, a entidade associativa é representada por um retângulo contendo o losango do relacionamento.
+#### 1.3 Entidade Associativa
+
+A entidade associativa é criada quando se identifica a necessidade de associar uma entidade a um relacionamento existente. Na Modelagem ER não é possível que um relacionamento seja associado a uma entidade; então tornamos esse relacionamento uma entidade associativa para que possamos relacioná-lo com outras entidades. Ao fazer o diagrama ER, a entidade associativa é representada por um retângulo contendo o losango do relacionamento.
 
 Para esclarecer melhor esse conceito, vamos voltar ao exemplo do sistema acadêmico. Imagine a seguinte situação:
 
 Um professor ministra uma disciplina, cujas aulas são assistidas por alunos. A frequência dos alunos não está diretamente ligada à disciplina ou ao professor, mas sim à aula que foi assistida num determinado dia e horário. A aula, sim, está relacionada ao professor e à disciplina. Como não podemos relacionar a entidade aluno com o relacionamento no MER, devemos criar uma entidade associativa “aula”, que contém os atributos identificadores disciplina e professor, além das informações sobre a aula a que ele assistiu (data, horário e tema, por exemplo). A partir daí, pode-se relacionar o aluno com a aula a que ele assistiu. O relacionamento “ministra” tornou-se uma entidade associativa “Aula”.
 
-a diciplina é ministrada durante a aula por um professor,esta aula ministrada é frequentada por alunos.
-enquanto diciplina , aluno e professor sao atributos.
+A disciplina é ministrada durante a aula por um professor; esta aula ministrada é frequentada por alunos.
+
+Enquanto disciplina, aluno e professor são ENTIDADES.
+
+Atributos → nome, idade, código, etc.
 
 ---
 
 ## Atributos no modelo MER
 
-enquanto o atributo tem as caracteristicas que descreve a entedidade, como o nome da entidade, o peso da entidade , o tamanho da entidade, a cor da entidade , o ano de produçao da entidade, a personalidade da entidade , simboliza por uma figura oval
-alguns atributos podem ser simples,outros podem ser composto ou ate multivalorados,
+O atributo tem as características que descrevem a entidade, como o nome da entidade, o peso, o tamanho, a cor, o ano de produção, a personalidade, etc. É simbolizado por uma figura oval.
 
-1.atributo simples
+Alguns atributos podem ser simples, outros podem ser compostos ou até multivalorados.
 
-Atributos simples (ou atômicos) em bancos de dados são características de uma entidade que não podem ser subdivididas em partes menores com significado próprio. Eles contêm um valor único e direto, como CPF, idade, sexo
+### 1. Atributo Simples
 
-Valor Único: Geralmente armazenam apenas um valor por instância de entidade (monovalorados).
-Exemplos Comuns:
-Pessoa: CPF, DataNascimento.
-Produto: Preço, Código.
-Funcionário: Salário, Cargo
+Atributos simples (ou atômicos) em bancos de dados são características de uma entidade que não podem ser subdivididas em partes menores com significado próprio. Eles contêm um valor único e direto, como CPF, idade, sexo.
 
-1.2 atributo composto
+- **Valor Único**: Geralmente armazenam apenas um valor por instância de entidade (monovalorados).
+- **Exemplos Comuns**:
+  - Pessoa: CPF, DataNascimento.
+  - Produto: Preço, Código.
+  - Funcionário: Salário, Cargo.
 
-Os atributos composto em banco de dados são campos que podem ser subdividados em partes menores e independentes,representando dados completos .
-Eles ajudam a estruturar informações, mas geralmente são desmembrados na modelagem física para melhor normalização. 
-exemplo:
-o residencia pode ser dividido em estado,rua,cidade e CEP,numero.
-o nome pode ser dividido em nome e sobrenome
+### 1.2 Atributo Composto
 
+Os atributos compostos em banco de dados são campos que podem ser subdivididos em partes menores e independentes, representando dados completos. Eles ajudam a estruturar informações, mas geralmente são desmembrados na modelagem física para melhor normalização.
 
-# Atributos multivalorados 
-são características de uma entidade que podem ter múltiplos valores para uma única ocorrência
+**Exemplo**: O endereço pode ser dividido em estado, rua, cidade, CEP e número. O nome pode ser dividido em nome e sobrenome.
 
-Múltiplos valores: Uma instância pode ter vários valores para o mesmo atributo (ex: vários telefones: fixo, celular, trabalho).
-Representação visual (MER): Elipse dupla (círculo dentro de outro) ou { } dentro de uma elipse simples.
-Exemplos: Números de telefone, endereços de e-mail, habilidades de um funcionário, cores de um produto
+### 1.3 Atributos Multivalorados
 
-No banco de dados relacional, eles são resolvidos criando uma nova tabela para armazenar os valores, ligando-os à entidade original por uma chave estrangeira, ou usando tipos de dados como arrays/JSON, mas a criação de uma tabela separada é a forma mais comum e normalizada para evitar inconsistências
+São características de uma entidade que podem ter múltiplos valores para uma única ocorrência.
 
-Atributos multivalorados são propriedades de entidades que podem armazenar múltiplos valores para uma única instância, como "Telefones" de um cliente ou "Hobbies" de uma pessoa. No Modelo Entidade-Relacionamento (MER), são representados por círculos duplos. Para implementação, exigem a criação de uma nova tabela separada para evitar a duplicação de dados, geralmente contendo uma chave estrangeira para a entidade original. 
+- **Múltiplos valores**: Uma instância pode ter vários valores para o mesmo atributo (ex: vários telefones: fixo, celular, trabalho).
+- **Representação visual (MER)**: Elipse dupla (círculo dentro de outro) ou { } dentro de uma elipse simples.
+- **Exemplos**: Números de telefone, endereços de e-mail, habilidades de um funcionário, cores de um produto.
 
+No banco de dados relacional, eles são resolvidos criando uma nova tabela para armazenar os valores, ligando-os à entidade original por uma chave estrangeira, ou usando tipos de dados como arrays/JSON. No entanto, a criação de uma tabela separada é a forma mais comum e normalizada para evitar inconsistências.
+
+Atributos multivalorados são propriedades de entidades que podem armazenar múltiplos valores para uma única instância, como "Telefones" de um cliente ou "Hobbies" de uma pessoa. No Modelo Entidade-Relacionamento (MER), são representados por círculos duplos. Para implementação, exigem a criação de uma nova tabela separada para evitar a duplicação de dados, geralmente contendo uma chave estrangeira para a entidade original.
 
 É um atributo que pode assumir diversos valores para uma determinada entidade. Por exemplo, o atributo telefone pode guardar vários valores para cada registro. Provavelmente você tem pelo menos dois números de telefone diferentes para contato: o seu celular e o telefone da sua casa. Então, o telefone pode ser considerado um atributo multivalorado por guardar mais de um valor para uma mesma pessoa.
-** Repare que o atributo composto é representado por uma linha dupla em seu contorno.
-**
 
-# Atributo derivado
+**Obs.: O atributo composto é representado por uma linha dupla em seu contorno.**
+
+### 1.4 Atributo Derivado
+
 Um atributo pode ser chamado de derivado quando seu valor é determinado a partir de um ou mais atributos. Estes atributos mantêm uma “relação”. Em alguns casos, dois ou mais atributos estão relacionados.
 
-Por exemplo, a idade e data de nascimento de um cliente. Para um determinado cliente, podemos determinar a sua idade por meio da data de nascimento e da data atual. Atributos como a idade são chamados de atributos derivados. Repare que o atributo derivado é representado por uma linha pontilhada em seu contorno:
+Por exemplo, a idade e a data de nascimento de um cliente. Para um determinado cliente, podemos determinar a sua idade por meio da data de nascimento e da data atual. Atributos como a idade são chamados de atributos derivados. Repare que o atributo derivado é representado por uma linha pontilhada em seu contorno.
 
 ---
 
-# o relacionamento e cardinalidade
+## O relacionamento e cardinalidade
 
 Agora que você já conhece os tipos de entidade, deverá definir a forma como elas se relacionam entre si. De acordo com a quantidade de objetos envolvidos em cada lado do relacionamento, podemos classificar os relacionamentos: relacionamento um para um, um para muitos e muitos para muitos.
 
+### 1. Relacionamento 1..1 (um para um)
 
-1. Relacionamento 1..1 (um para um)
-São relacionamentos entre duas entidades, em que cada uma delas referencia obrigatoriamente a uma única unidade da outra.
+São relacionamentos entre duas entidades, em que cada uma delas referencia obrigatoriamente uma única unidade da outra.
 
-Por exemplo, em um banco de dados de currículos, cada usuário cadastrado deve possuir necessariamente apenas um currículo na base, ao mesmo tempo em que cada currículo só pertence a um único usuário cadastrado
+Por exemplo, em um banco de dados de currículos, cada usuário cadastrado deve possuir necessariamente apenas um currículo na base, ao mesmo tempo em que cada currículo só pertence a um único usuário cadastrado.
 
-2. Relacionamento 1..N ou 1..* (um para muitos)
-São relacionamentos em que uma das entidades envolvidas pode referenciar a várias unidades da outra entidade, porém, o inverso não é verdade: cada uma das várias unidades referenciadas só pode estar ligada a uma unidade da primeira entidade.
+### 2. Relacionamento 1..N ou 1..* (um para muitos)
+
+São relacionamentos em que uma das entidades envolvidas pode referenciar várias unidades da outra entidade; porém, o inverso não é verdade: cada uma das várias unidades referenciadas só pode estar ligada a uma unidade da primeira entidade.
 
 Por exemplo, imagine um sistema para cadastro de livros em bibliotecas. Uma editora pode publicar vários livros, mas cada livro pode ser publicado por apenas uma editora.
 
 Nesse caso, dizemos que a cardinalidade mínima e máxima de editora é 1,N, ou seja, uma editora pode publicar no mínimo 1 e no máximo muitos (quantidade indeterminada) livros. Já um livro pode ser publicado por no mínimo 1 e no máximo 1 editora.
 
-outro exemplo é o caso da mae e do filho
-enquanto uma mãe pode ter nenhum, um ou vários filhos.
- Um filho normalmente tem apenas uma mãe (considerando o modelo biológico tradicional).
+Outro exemplo é o caso da mãe e do filho: enquanto uma mãe pode ter nenhum, um ou vários filhos, um filho normalmente tem apenas uma mãe (considerando o modelo biológico tradicional).
 
-3. Relacionamento N..N, N:M ou *..* (muitos para muitos)
+### 3. Relacionamento N..N, N:M ou *..* (muitos para muitos)
+
 Nesse tipo de relacionamento, cada entidade pode fazer referência a múltiplas unidades da outra.
 
-Pensando em um sistema de controle de projetos, um engenheiro pode desenvolver vários projetos e ao mesmo tempo um projeto pode ser desenvolvido por vários engenheiros. Assim, um objeto do tipo engenheiro pode referenciar múltiplos objetos do tipo projeto, e vice versa.
+Pensando em um sistema de controle de projetos, um engenheiro pode desenvolver vários projetos e ao mesmo tempo um projeto pode ser desenvolvido por vários engenheiros. Assim, um objeto do tipo engenheiro pode referenciar múltiplos objetos do tipo projeto, e vice-versa.
 
 Nesse caso, dizemos que a cardinalidade mínima e máxima de Engenheiro é 0,N, ou seja, um engenheiro pode desenvolver no mínimo 0 (nenhum) e no máximo muitos (indeterminados) projetos. E os projetos podem ser desenvolvidos por no mínimo 1 e no máximo muitos (indeterminados) engenheiros.
+
+---
 
 # Modelo Relacional e Linguagem SQL
 
 Existem vários modelos de bancos de dados, desenvolvidos ao longo do tempo, e o mais utilizado atualmente é o Modelo Relacional.
 
-#O Modelo Relacional
+## O Modelo Relacional
 
-O banco de dados relacional é um dos pilares da gestão de informações em ambientes computacionais. Desde sua criação na década de 1970 por Edgar F. Codd no livro "A Relational Model of Data for Large Shared Data Banks, esse modelo tem sido amplamente adotado em diversas aplicações, graças à sua estrutura  organizada e eficiente. Neste artigo, exploraremos os conceitos fundamentais do banco de dados relacional, suas aplicações práticas e a importância desse modelo na era da informação.
+O banco de dados relacional é um dos pilares da gestão de informações em ambientes computacionais. Desde sua criação na década de 1970 por Edgar F. Codd no livro "A Relational Model of Data for Large Shared Data Banks", esse modelo tem sido amplamente adotado em diversas aplicações, graças à sua estrutura organizada e eficiente. Neste artigo, exploraremos os conceitos fundamentais do banco de dados relacional, suas aplicações práticas e a importância desse modelo na era da informação.
 
 O modelo relacional é baseado na ideia de que os dados podem ser organizados em tabelas, também conhecidas como relações, compostas por linhas e colunas. Cada tabela representa uma entidade ou conceito, e as colunas representam os atributos dessa entidade. Por exemplo, em um banco de dados de uma loja online, poderíamos ter uma tabela "Clientes" com colunas como "ID do Cliente", "Nome" e "Endereço".
 
-Tabelas (relações), linhas (registros), colunas (atributos).
+- Tabelas (relações)
+- Linhas (registros)
+- Colunas (atributos)
 
-#Chaves e Relacionamentos
+## Chaves e Relacionamentos
 
 Para compreender o conceito de chave primária, pense no seguinte exemplo:
-Em um BD para cadastro de clientes de uma empresa, ao registrar cada cliente pede-se a indicação do número de CPF, nome, telefone, renda mensal, entre outras informações. Para fazer uma consulta no banco de dados, é preciso ter um campo que identifique o cliente. Talvez você pense em buscar pelo nome ou ainda pelo telefone dessa pessoa correto? Porém, essas informações podem se repetir em diversos cadastros: podemos ter pessoas homônimas ou ainda familiares que compartilham o telefone residencial.
 
-Nos bancos de dados, toda entidade deve ter um atributo com valor único e que nunca poderá ser nulo. Dizemos que esse valor garante a unidade da entidade, já que duas entidades não podem compartilhar esse valor característico simultaneamente. Esse atributo especial é chamado de chave primária.
-Uma chave primária é um atributo ou conjunto de atributos que identifica unicamente um registro na tabela e que por isso não pode ser repetido.
+Em um BD para cadastro de clientes de uma empresa, ao registrar cada cliente pede-se a indicação do número de CPF, nome, telefone, renda mensal, entre outras informações. Para fazer uma consulta no banco de dados, é preciso ter um campo que identifique o cliente. Talvez você pense em buscar pelo nome ou ainda pelo telefone dessa pessoa, correto? Porém, essas informações podem se repetir em diversos cadastros: podemos ter pessoas homônimas ou ainda familiares que compartilham o telefone residencial.
 
-No exemplo do BD que registra clientes, pode-se utilizar o CPF como chave-primária: o CPF é um número único para cada cidadão, portanto, se fizermos uma pesquisa por esse dado, com certeza, a consulta retornará apenas o registro de uma única pessoa.
+Nos bancos de dados, toda entidade deve ter um atributo com valor único e que nunca poderá ser nulo. Dizemos que esse valor garante a unicidade da entidade, já que duas entidades não podem compartilhar esse valor característico simultaneamente. Esse atributo especial é chamado de chave primária.
 
-umas entidades podem ter mais de um atributo chave, dependendo da necessidade do sistema.
-· Chave Primária: É um campo que identifica exclusivamente(forma única) cada linha em uma tabela. Geralmente, é composta por um ou mais campos que garantem a unicidade dos registros.
+Uma chave primária é um atributo ou conjunto de atributos que identifica unicamente um registro na tabela e que, por isso, não pode ser repetido.
 
-Chave Estrangeira: É um campo que estabelece uma relação entre duas tabelas, permitindo a criação de conexões entre os dados. Por exemplo, uma tabela "Pedidos" pode ter uma chave estrangeira que se relaciona com a tabela "Clientes".
-Normalização: É o processo de organização das tabelas para reduzir a redundância de dados e garantir a integridade referencial. A normalização ajuda a manter a consistência dos dados
-· Chave estrangeira (FK): cria a relação entre duas tabelas e é utilizada para garantir a integridade referencial
+No exemplo do BD que registra clientes, pode-se utilizar o CPF como chave primária: o CPF é um número único para cada cidadão; portanto, se fizermos uma pesquisa por esse dado, com certeza a consulta retornará apenas o registro de uma única pessoa.
 
-#Aplicações
-1. Sistemas de Gerenciamento de Relacionamento com Clientes (CRM): Esses sistemas armazenam informações sobre clientes e suas interações, permitindo uma melhor compreensão do comportamento do cliente e a personalização de serviços.
+Uma entidade pode ter mais de um atributo chave, dependendo da necessidade do sistema.
 
-2. Sistemas de Gerenciamento de Pedidos: Para empresas que lidam com pedidos, o banco de dados relacional é essencial para rastrear pedidos, produtos e clientes, facilitando o atendimento eficiente e a logística.
+- **Chave Primária**: É um campo que identifica exclusivamente (de forma única) cada linha em uma tabela. Geralmente, é composta por um ou mais campos que garantem a unicidade dos registros.
+- **Chave Estrangeira**: É um campo que estabelece uma relação entre duas tabelas, permitindo a criação de conexões entre os dados. Por exemplo, uma tabela "Pedidos" pode ter uma chave estrangeira que se relaciona com a tabela "Clientes".
+- **Normalização**: É o processo de organização das tabelas para reduzir a redundância de dados e garantir a integridade referencial. A normalização ajuda a manter a consistência dos dados.
+- **Chave estrangeira (FK)**: Cria a relação entre duas tabelas e é utilizada para garantir a integridade referencial.
 
-3. Sistemas de Gerenciamento de Recursos Humanos: O armazenamento de informações sobre funcionários, folhas de pagamento e benefícios é vital para as operações de RH.
+## Aplicações
 
----
+1. **Sistemas de Gerenciamento de Relacionamento com Clientes (CRM)**: Esses sistemas armazenam informações sobre clientes e suas interações, permitindo uma melhor compreensão do comportamento do cliente e a personalização de serviços.
+2. **Sistemas de Gerenciamento de Pedidos**: Para empresas que lidam com pedidos, o banco de dados relacional é essencial para rastrear pedidos, produtos e clientes, facilitando o atendimento eficiente e a logística.
+3. **Sistemas de Gerenciamento de Recursos Humanos**: O armazenamento de informações sobre funcionários, folhas de pagamento e benefícios é vital para as operações de RH.
+
 
 ## 📌 Constraints (Restrições) em Banco de Dados
 
@@ -552,7 +589,7 @@ tabela           |relacionamento         |nome do relacionamento |descriçao    
 tabela_livro     |tabela_autor           |escrever               |tabela para cadastro de coleção|
 tabela_livro     |tabela_editora         |publicar               |tabela para cadastro de coleção|
 tabela_autor     |tabela_livro           |escreve                |tabela para cadastro de autores dos livros
-tabela_Editora   |abela_livro            |escreve                |cadastro de editoras
+tabela_Editora   |tabela_livro            |escreve                |cadastro de editoras
 
 
 📘 Exemplo de Dicionário de Dados
@@ -621,17 +658,17 @@ chave primaria codigo disciplina
     nome_disciplina
     data de inicio
 
-aquinesse exemplo o nome_diciplina depende apenas da chave primaria codigo_disciplina
+aqui nesse exemplo o nome_diciplina depende apenas da chave primaria codigo_disciplina
+--
 
-
-
----
-# O que é normalização
+# Normalização
 normalização é um processo fundamental no desgin de  banco de dados relacional,introduzindo a partir dos conceitos proposta por edgar F codd, em 1970.
 A normalizaçao organiza dados em tabelas menores,reduzindo redundancia e melhorando a integridade dos dados .
 As principais formais normais sao a primeira forma normal(1FN),Segunda forma normal 2FN e terfeira forma normal 3 FN, e cada um visa eliminar tipos especificos de redudancia e depedencia inadequadas
 
+Nesse artigo do paper relational model off data for large share data banks, indiciou a aplicação de teste que servem para confirmar que a relação repetir 3 regras específicas que ele denominou de forma normal (FN, assim respeitando as 3 formas normais a tabela estará normalizado e assim não teremos anomalias nem redundâncias .
 
+Em resumo,os teste visão avalias os esquemas das relações considerando suas dependências funcionais,chaves primárias para chegar as regras de forma normais. Em casos de quebra de uma das formas normais a relação pode ser decomposta em relações menores para que seja garantido o respeito as formas normais
 
 ## Como é feita a normalização 
 
@@ -650,183 +687,18 @@ Estabelecer Relacionamentos Adequados: Criar uma estrutura eficiente para consul
 
 ## Importância da Normalização: A normalização ajuda a evitar problemas de redundância e inconsistência ao dividir grandes tabelas em menores e estabelecer relacionamentos entre elas. Isso facilita a manutenção do banco de dados, pois garante que atualizações sejam refletidas corretamente sem causar duplicação ou perda de dados. Além disso, um banco de dados bem normalizado oferece melhor desempenho para consultas complexas e minimiza o risco de inconsistências em operações de inserção, atualização e exclusão
 
----
-
-#SQL
-SQL (Structured Query Language) é uma linguagem de programação utilizada para consultar,acessar, manipular,recuperar,armazenar  em bancos de dados relacionais.
-O SQL tornou-se um padrão do American National Standards Institute (ANSI) em 1986 e da International Organization for Standardization (ISO) em 1987,
-a sigla SQL é uma simplificação de  Structured Query Language (Linguagem de Consulta Estruturada).
-
-O SQL pode inserir e atualizar registros em um banco de dados, além de executar consultas em um banco de dados e recuperar dados de um banco de dados, excluir registros de um banco de dados. 
-O SQL também pode criar novos bancos de dados e novas tabelas em um banco de dados já existente, além de criar procedimentos armazenados e visualizações em um banco de dados.
-Ele também define permissões em tabelas, procedimentos e visualizações. 
-SQL keywords are NOT case sensitive
 
 
-In the context of SQL, the top level is the database server, also called the instance. Your instance is where all of your data is stored. Within an instance, there can be multiple databases, each containing data organized based on some broad categorization.
 
 
-A database is broken down into tables. The table is where the actual data lives. Once you’re at the table level, data is organized by columns and rows and housed within fields, almost exactly like an Excel spreadshee
+Tipos de Dados (Escalas de Mensuração)
 
-SQL tem subconjuntos o DQL,DML,DDL,DCL,DTL
-
-DQL -DATA QUERY LANGUAGE
-COMANDANDOS SQL
-SELECT
-
-DML -DATA MANIPULATE LANGUAGE
-INSERT 
-UPDATE 
-DELETE
-
-DDL DATA DETERMINE LANGUAGE
-COMANDOS SQL
-CREATE ALTER DROP
-
-DCL control LANGUAGE ou Os comandos são 
-COMANDOS 
-GRANT REVOKE
-
- é DTL (Data Transaction Language) ou TCL (Transaction Control Language),Os comandos são BEGIN TRANSACTION, COMMIT e ROLLBACK
-
-
-RDBMS stands for Relational Database Management System
-RDBMS is the basis for SQL, and for all modern database systems such as MS SQL Server, IBM DB2, Oracle, MySQL, and Microsoft Access.
-The data in RDBMS is stored in database objects called tables. A table is a collection of related data entries and it consists of columns and rows.
-
-
-what is a FIELD?
-Every table is broken up into smaller entities called fields
-A field is a column in a table that is designed to maintain specific information about every record in the table.
-
-The fields in the Customers table consist of CustomerID, CustomerName, ContactName, Address, City, PostalCode and Country.
-
-in sql server 
-try :
-SELECT * FROM Customers;
-
-A column is a vertical entity in a table that contains all information associated with a specific field in a table.
-
-what is a record ?
-A record, also called a row, is each individual entry that exists in a table. For example, there are 91 records in the above Customers table. 
-A record is a horizontal entity in a table
-
-SQL statements consist of keywords that are easy to understand
-
-Some database systems require a semicolon at the end of each SQL statement.
-
-Semicolon is the standard way to separate each SQL statement in database systems that allow more than one SQL statement to be executed in the same call to the server.
-
-some importnant sql comands 
-SELECT - extracts data from a database
-UPDATE - updates data in a database
-DELETE - deletes data from a database
-INSERT INTO - inserts new data into a database
-CREATE DATABASE - creates a new database
-ALTER DATABASE - modifies a database
-CREATE TABLE - creates a new table
-ALTER TABLE - modifies a table
-DROP TABLE - deletes a table
-CREATE INDEX - creates an index (search key)
-DROP INDEX - deletes an index
+1. Dados Nominais: não possuem ordem ou hierarquia. Exemplos: cores, nomes de países, gênero.
+2. Dados Ordinais: possuem uma ordem definida. Exemplos: classificações de produtos (bom, médio, ruim), nível escolar.
+3. Dados Numéricos (Quantitativos): representam valores numéricos. Exemplos: idade, peso, temperatura.
 
 ---
 
-SQL DATA Types
- 
-Numeric data types such as INT, TINYINT, BIGINT, FLOAT, REAL, etc.
-Date and Time data types such as DATE, TIME, DATETIME, etc.
-Character and String data types such as CHAR, VARCHAR, TEXT, etc.
-Unicode character string data types such as NCHAR, NVARCHAR, NTEXT, etc.
-Binary data types such as BINARY, VARBINARY, etc.
-Miscellaneous data types such as CLOB, BLOB, XML, CURSOR, TABLE, etc.
-
----
-
-The SQL SELECT Statement
-The SELECT statement is used to select data from a database.
-
-SELECT column1, column2, ...
-FROM table_name;
-like :
-SELECT CustomerName, City FROM Customers;
-
-If you want to return all columns, without specifying every column name, you can use the SELECT * syntax:
-SELECT * FROM Customers;
-
-select distinct statement 
-this means that this statement is used oonly to return the different  values
-Inside a table, a column often contains many duplicate values; and sometimes you only want to list the different (distinct) values.
-
-SELECT DISTINCT column1, column2, ...
-FROM table_name;
-
-By using the DISTINCT keyword in a function called COUNT, we can return the number of different countries.
-
-SELECT COUNT(DISTINCT Country) FROM Customers;
-
-SELECT DISTINCT Country FROM Customers;
-
-Você não precisa usar o comando INSERT um por um, dá sim para inserir vários registros de uma só vez.
-
-Basta separar cada linha de valores por vírgula, assim:
-
-INSERT INTO aluno (nome, nascimento)
-VALUES 
-  ('Ana', '2000-05-10'),
-  ('Bruno', '1999-12-03'),
-  ('Carla', '2001-07-22'),
-  ('Diego', '1998-11-14'),
-  ('Eduarda', '2002-03-30');
-
-The SQL WHERE Clause
-The WHERE clause is used to filter records.
-
-It is used to extract only those records that fulfill a specified condition.
-
-SELECT * FROM Customers
-WHERE Country='Mexico';
-
-SELECT column1, column2, ...
-FROM table_name
-WHERE condition;
-
-select * from wheater 
-where alig='san francisco' AND prcp>0.0;
-
-select a* from tabela_alunos
- where aluno_genero="M"
- and where aluno_data='01|01|2003'
- and aluno_id>300;
-
-
-Note: The WHERE clause is not only used in SELECT statements, it is also used in UPDATE, DELETE, etc.!
-
----
-
-Order By
-
-select * from wheather order by city
-
-select * from pessoa order by nome_pessoa;
-
-SELECT numero,saldo,limite From Conta;
-select * From conta;
-UPDATE pessoa set Id_endereço=1
-Where cpf =10;
-
-deletar linhas duplicadas
-select distinct alig from wheater 
-
----
-INSERT INTO station (city, state, lat_n, long_w) VALUES
-('Recife', 'PE', -8.05, -34.90),
-('Olinda', 'PE', -8.01, -34.85),
-('Caruaru', 'PE', -8.28, -35.97),
-('Petrolina', 'PE', -9.38, -40.50);
-
-
------
 #Nível 4: Funcionamento Interno do SGBD (Administração e Controle)
 
 Processamento de Transações (Já abordado): Conceito de transação e propriedades ACID (Atomicidade, Consistência, Isolamento, Durabilidade).
@@ -842,434 +714,140 @@ Otimização de Consultas (Não abordado): Como o SGBD planeja a execução de u
 Gerenciamento de Armazenamento (Não abordado): Índices (B-Tree, Hash), estruturas de arquivos.
 
 ---
-
-#Nível 5: Tópicos Avançados e Ecossistema de Dados (BI e Big Data)
-
-
-*O que é Business Intelligence?*
-
-*BI é um conjunto de processos e tecnologias para coletar, gerenciar e analisar dados organizacionais, gerando insights que orientam estratégias e operações.*
-
-*Está intimamente ligado ao processo de ETL.*
-
----
-
-*Etapas do BI*
-
-1. *Coleta de dados: obtenção de dados brutos de diversas fontes.*
-2. *Armazenamento: centralização em banco de dados ou nuvem.*
-3. *Processamento: limpeza, transformação e preparação.*
-4. *Visualização: apresentação por gráficos, tabelas, painéis.*
-5. *Análise: exploração dos dados para obter insights.*
-
----
-
-*Objetivo do BI*
-
-*Responder perguntas de negócios com base em dados concretos:*
-
-*· Por que as vendas caem em determinados meses?
-· Quais produtos são mais vendidos em cada região?
-· Como melhorar estratégias de marketing?*
-
-*BI se aplica a qualquer empresa, de qualquer segmento.*
-
----
-
-*Mercado de Dados*
-
-*O mercado de dados está em forte crescimento, impulsionado pela transformação digital. Empresas buscam profissionais capazes de transformar dados brutos em insights valiosos.*
-
----
-
-*Profissões de Dados*
-
-*Engenharia de Dados*
-
-*· Pipelines de dados, ETL, integração entre sistemas.
-· Ferramentas: Cloud, Python, SQL, Spark, Git.*
-
-*Análise de Dados*
-
-*· Visualização, estatística descritiva, ETL.
-· Ferramentas: Power BI, Tableau, Python, SQL.*
-
-*Ciência de Dados*
-
-*· IA, Machine Learning, estatística preditiva.
-· Base: Matemática, cálculo, álgebra linear. Ferramentas: Python, R, Cloud.*
-
----
-
-*Looker*
-
-*Plataforma de BI adquirida pelo Google em 2019. Permite explorar dados com Machine Learning, visualizações e relatórios.*
-
-*Características:*
-
-*· Personalizável
-· Dinâmico
-· Compartilhamento facilitado
-· Conectividade com Google Ads, BigQuery, MySQL, PostgreSQL, CSV, Sheets*
-
-*O Looker Studio é a evolução do antigo Google Data Studio.*
-
----
-
-*Microsoft Power BI*
-
-*Ferramenta completa de BI que permite preparação, modelagem, visualização, distribuição e governança de dados.*
-
-*Ferramentas similares: Qlik, Tableau, Sisense, Domo, Zoho Analytics, Apache Superset, Metabase, Looker Studio.*
-
----
-
-*Componentes do Power BI*
-
-*· Power BI Desktop (criação)
-· Power BI Service (compartilhamento e publicação)
-· Power BI Mobile (acesso em dispositivos móveis)*
-
----
-
-*Fluxo de Uso*
-
-1. *Criar relatório no Desktop*
-2. *Publicar no Service*
-3. *Visualizar e interagir no Service ou Mobile*
-
----
-
-*Blocos de Construção*
-
-*· Modelos semânticos (conjuntos de dados prontos para análise)
-· Visualizações (gráficos, tabelas, mapas etc.)*
-
-*Aplicativo (App): coleção de relatórios e painéis organizados para consumo.*
-
----
-
-*Conexões de Dados*
-
-*APIs permitem inserir e extrair dados. O Power BI possui conexões nativas com dezenas de fontes.*
-
----
-
-*Modos de Conexão*
-
-1. *Importação*
-
-*· Dados são copiados para o arquivo .pbix.
-· Permite uso de M, DAX e modelagem completa.
-· Pode ficar lento com grandes volumes.
-· Fontes comuns: CSV, Excel, JSON, PDF, pastas.*
-
-*Processo: Obter Dados > Selecionar fonte > Carregar ou Transformar.*
-
-1. *DirectQuery*
-
-*· Não copia dados; consulta a fonte em tempo real.
-· Indicado para Big Data.
-· Possui limitações com M e DAX.
-· Fontes comuns: SQL Server, Snowflake, BigQuery.
-· Boas práticas: Evitar SELECT *, usar filtros (WHERE) e selecionar apenas colunas necessárias.*
-
-1. *Conexão Ao Vivo (Live)*
-
-*· Usada com Analysis Services, modelos semânticos do Power BI, cubos ou SaaS.
-· O Power BI não cria modelo local; apenas consome o modelo existente.*
-
----
-
-*Fontes de Dados Disponíveis*
-
-*· Arquivos: CSV, Excel, JSON, XML, PDF, Parquet, pastas
-· Bancos relacionais: SQL Server, Oracle, MySQL, MariaDB, IBM DB2, Snowflake
-· Big Data: Hadoop, Kusto, HDFS
-· Análise: Analysis Services, AtScale, Essbase
-· Online: Web, Exchange, SharePoint
-· Outros: R Script, ODBC, APIs diversas*
-
----
-
-*Relatórios Dinâmicos*
-
-*Relatórios podem mudar conforme parâmetros, permitindo múltiplas visualizações sem duplicar modelos.*
-
----
-
-*ETL*
-
-*ETL = Extract, Transform, Load (Extrair, Transformar, Carregar)*
-
-*· Extração: unir dados de múltiplas fontes (CRM, arquivos, APIs).
-· Transformação: limpeza, padronização, agregação, conversão.
-· Carga: envio para Data Warehouse, banco de dados, Data Lake etc.*
-
----
-
-*Power Query*
-
-*É o motor de transformação de dados do Power BI e Excel. Permite aplicar ETL com interface gráfica.*
-
-*É a ferramenta oficial de ETL do Power BI e Excel.*
-
----
-
-*Como o Power Query Ajuda*
-
-*Profissionais gastam até 80% do tempo na preparação de dados. O Power Query auxilia:*
-
-*· Conectando-se a centenas de fontes
-· Aplicando mais de 350 transformações
-· Automatizando processos
-· Padronizando modelos
-· Atualizando consultas automaticamente*
-
----
-
-*Desafios e Soluções com Power Query*
-
-*Desafio Como o Power Query Ajuda
-Encontrar dados Conecta a várias fontes
-Conectividade fragmentada Experiência consistente
-Dados precisam ser reformulados Interface intuitiva
-Modelagens únicas Consultas repetíveis
-Mudanças de esquema Ajuste fácil
-Volume, velocidade, variedade Permite trabalhar com subconjuntos
-Atualizações Manual, agendada ou programada
-Formatos variados Mais de 350 transformações*
-
----
-
-*Experiências do Power Query*
-
-*Power Query Online*
-
-*Usado em: Power BI Dataflows, Microsoft Power Platform, Azure Data Factory.*
-
-*Power Query Desktop*
-
-*Usado em: Excel, Power BI Desktop.*
-
----
-
-*Uso Prático no Power BI*
-
-*· Transform Data (abre o Power Query)
-· New Source (adicionar nova fonte)
-· Enter Data (inserir dados manualmente)*
-
----
-
-*Applied Steps (Etapas Aplicadas)*
-
-*Cada transformação no Power Query gera um passo (step). É possível:*
-
-*· Adicionar/remover passos
-· Alterar tipos de dados
-· Adicionar/remover colunas
-· Manter/remover linhas
-· Dividir colunas (Split)
-· Promover primeira linha a cabeçalho*
-
----
-
-*Transformações Comuns no Power Query*
-
-*· Remover colunas
-· Filtrar linhas
-· Usar primeira linha como cabeçalho
-· Mesclar / Acrescentar tabelas
-· Pivotar / Despivotar colunas
-· Transpor linhas ↔ colunas
-· Contar linhas
-· Preencher valores (para baixo/para cima)
-· Extrair primeiros/últimos caracteres
-· Executar scripts Python e R
-· Funções estatísticas (soma, média, mediana)
-· Converter colunas em listas
-· Mover colunas*
-
----
-
-*Fluxos de Dados (Dataflows)*
-
-*Executam transformações do Power Query na nuvem e gravam a saída em:*
-
-*· Dataverse
-· Azure Data Lake*
-
-*Podem ser usados por múltiplos produtos.*
-
----
-
-*Editor Avançado e Linguagem M*
-
-*O Power Query utiliza a linguagem M para expressar transformações. O Editor Avançado permite visualizar e editar o código M diretamente.*
-
-----
 Power BI e Azure
 
 O Power BI pode ser integrado diretamente com diversos serviços Azure, como: Stream Analytics, Event Hubs, Machine Learning, Storage, SQL Database, HDInsight.
----
-
-#   O que é big data
-
-paradigma do big data,
-3 v velocidade,variedade e volume
-
-o rede social produz uma quantidade absurda de informação,com diferentes tipos,de uma forma extremamente aburda de criação desses dados, como lidar com esses dados tem tempo real
-
-foi o que deu esse grande boom ou ajudou acrescer a utilização de banco de dados no sql
-
- OS  7 V de Big DATA
- volume grande de dados
- velocidade os dados sao trnasmitidos  de modo rapido
- variedade analise diferente tipos e formatos de dados
- veracidade os dados sao verdadeiros e confiaveis
- valor os dados traze valor para uma empresa 
- viralidade os dados se espalham rapidamente
- viscodidade dificiuldade de navegar entre os dados,alem de ter incistencia dos dados
-
-Different ways to handle Big Data problems:
-1. The queries should be moved to the data rather than moving data to queries:
-
-At the point, when an overall query is needed to be sent by a customer to all hubs/nodes holding information, the more proficient way is to send a query to every hub than moving a huge set of data to a central processor. The stated statement is a basic rule that assists to see how NoSQL data sets have sensational execution benefits on frameworks that were not developed for queries distribution to hubs. The entire data is kept inside hub/node in document form which means just the query and result are needed to move over the network, thus keeping big data’s queries quick.
-
-2. Hash rings should be used for even distribution of data:
-
-To figure out a reliable approach to allocating a report to a processing hub/node is perhaps the most difficult issue with databases that are distributed. With a help of an arbitrarily produced 40-character key, the hash rings method helps in even distribution of a large amount of data on numerous servers and this is a decent approach to uniform distribution of network load.
-
-3. For scaling read requests, replication should be used:
-
-In real-time, replication is used by databases for making data’s backup copies. Read requests can be scaled horizontally with the help of replication. The strategy of replication functions admirably much of the time.  
-
-4. Distribution of queries to nodes should be done by the database:
-
-Separation of concerns of evaluation of query from the execution of the query is important for getting more increased performance from queries traversing numerous hubs/nodes. The query is moved to the data by the NoSQL database instead of data moving to the query.
 
 ------
 
-#NoSQL
+--
+O que é o SPARK ?
+ O Spark não é um SGBD, mas sim um motor de processamento distribuído (ou data processing engine). Ele processa dados em larga escala usando clusters de computadores, mas não gerencia dados da mesma forma que um SGBD tradicional (como controle de concorrência ACID em nível de registro). Ele se integra a diversos SGBDs e sistemas de arquivo para processá-los
+---
 
-modelos NoSQL
 
-os dados nao estruturados e semi estruturados sao consumidos por bancos de dados nosql
+O que é data driven?
+Milhões de informações são geradas diariamente na operação dos negócios. Se a empresa não cuidar, não analisar e deixar esses dados guardados sem atenção, inúmeras oportunidades serão ignoradas. Isso sem falar na séria ameaça de essa empresa não existir mais nos próximos anos, devido ao avanço tecnológico feroz e à concorrência fazendo uma gestão inteligente, orientada a dados. Portanto, tratar eficazmente a informação tornou-se vital para qualquer companhia se manter no mercado, avançar e inovar. O conceito atual de data driven pode até ser novidade, porém, a ideia por trás dele tem origem na ciência dos dados e refere-se a como as empresas tomam suas decisões estratégicas. Antigamente, a orientação de um negócio era feita baseada em pequenas amostras de pesquisa, criatividade e intuição do dono ou gerente. Hoje, com a avalanche digital, os dados são, na prática, os números coletados e apresentados pelas ferramentas de análise de dados (Google Analytics, por exemplo), que entregam uma visão panorâmica do negócio em dashboards de suas plataformas. A partir disso, é possível perceber as fragilidades e fortalezas da empresa, extrair insights e direcionar a jornada do empreendimento de modo muito mais seguro. Em síntese, as organizações data driven são totalmente alucinadas pelo consumidor, criam uma supremacia comercial a partir da tecnologia e transformam dados em riqueza.
 
-alguns exemplos desses tipos de dados
-key/value store ,document data base, column family store, Iot, gaming data , social midia data , enterprise
-grafos,orientado a objetos.
+Qual a importância do Data Driven?
+O data driven é uma abordagem estratégica que envolve a coleta, a análise e o uso de dados para tomar decisões empresariais. Por meio dele, as empresas tomam decisões mais informadas e baseadas em evidências, o que, por sua vez, ajuda a melhorar a eficiência e o desempenho. O uso de dados significa que as empresas podem identificar tendências, prever resultados e tomar decisões de maneira mais inteligente. Além disso, o data driven permite que as empresas explorem novas oportunidades de negócios, pois elas podem usar os dados para descobrir novos caminhos. Desse modo, uma companhia capaz de extrair e analisar dados de diferentes fontes gera conhecimento e riqueza em suas operações. Isso porque é guiada pelas informações para a tomada de decisão e para o desenvolvimento do planejamento estratégico. Portanto, as organizações que conseguem interpretar dados para entender profundamente seu público, por exemplo, constroem uma relação muito mais próxima do cliente, transmitindo maior confiança e precisão. Essa atitude promove naturalmente uma expansão mais rápida, acompanhando a transformação digital.
 
-exemplos de bancos de dados NoSQL
-cassandra,mongoDB,aws,azure,redis,neo4j
+---
+Os bancos de dados não são a única maneira de organizar dados e as organizações geralmente utilizam diferentes lojas de dados para apoiar iniciativas diferentes.
 
-Os bancos de dados NoSQL, também conhecidos como bancos de dados com propósito específico, são projetados para modelos de dados específicos e armazenam dados em esquemas flexíveis que se escalam facilmente para aplicações modernas
-os bancos de dados NoSQL são amplamente reconhecidos por sua facilidade de desenvolvimento, funcionalidade e performance em escala
-As aplicações modernas enfrentam vários desafios que podem ser resolvidos pelos bancos de dados NoSQL. 
-Por exemplo, as aplicações processam um grande volume de dados de fontes diferentes, como mídias sociais, sensores inteligentes e bancos de dados de terceiros. Todos esses dados díspares não se encaixam perfeitamente no modelo relacional.
-A aplicação de estruturas tabulares pode levar a problemas de redundância, duplicação de dados e performance em grande escala. Os bancos de dados NoSQL são criados especificamente para modelos de dados não relacionais e têm esquemas flexíveis para criar aplicações modernas. Eles são amplamente reconhecidos por sua facilidade de desenvolvimento, funcionalidade e performance em escala. 
+Os bancos de dados são construídos principalmente para captura automática de dados, consultas rápidas e processamento de transações.  
 
-O NoSQL abrange uma ampla gama de tecnologias de banco de dados projetadas para atender às demandas dos aplicativos modernos. Banco de dados NoSQL facilitam a implementação e o armazenamento de uma grande variedade de tipos de dados e são excelentes em termos de desempenho - até que você precise de consistência de dados e comece a aplicar técnicas encontradas em DBMSs que reduzem o desempenho.
+Data lakes são ambientes de armazenamento de baixo custo projetados para lidar com grandes quantidades de dados brutos, estruturados e não estruturados. Ao contrário dos bancos de dados, os data lakes geralmente não limpam, validam nem normalizam os dados. Normalmente, armazenam grandes quantidades de dados para possibilitar atividades como treinamento de IA e análise de big data, nas quais o desempenho em tempo real é menos importante.
 
-As principais diferenças entre um banco de dados NoSQL e um banco de dados SQL 
+Data warehouses são construídos para possibilitar esforços de análise de dados, business intelligence e ciência de dados. Agregam dados de vários bancos de dados, limpam e preparam para estarem prontos para uso. 
 
-NoSQL		
-O NoSQL abrange uma série de tipos de bancos de dados, desde gráficos e valores-chave até documentos e colunas, e cada um deles tem um mecanismo de armazenamento de dados diferente.
-Normalmente, os dados são armazenados em um modelo relacional em que as colunas contêm pontos de dados e as linhas compreendem todas as informações referentes a uma única entidade.
-Flexibilidade	Como os esquemas são dinâmicos por natureza, as informações podem ser atualizadas em tempo real.
-No SQL, cada registro está em conformidade com um esquema predefinido em que as colunas devem ser determinadas e bloqueadas antes que os dados possam ser inseridos e não podem ser alterados posteriormente sem ficar off-line e modificar todo o banco de dados.
-
-Conformidade com o ACID	O NoSQL enfatiza o desempenho em detrimento da integridade dos dados e a maioria dos sistemas NoSQL compromete a conformidade com ACID em prol do desempenho, portanto, as organizações usam o NoSQL para tipos de dados não afetados pela consistência.
-Por padrão, os bancos de dados SQL ativam a conformidade com ACID, embora a maioria ofereça opções para favorecer o desempenho em detrimento da integridade dos dados em algumas operações (por exemplo, a replicação assíncrona entre sites pode causar perda de dados em caso de falha).
-
-Acesso	O acesso é permitido em padrões bem definidos e restritos que tornam o desempenho e a escalabilidade confiáveis e esperados.	Não é conhecido de antemão e, portanto, requer suposições que são então traduzidas em definições de índice.  
-
-NoSQL databases follow CAP theorem. The CAP theorem states that a distributed computer system cannot guarantee Consistency, Availability and Partition tolerance at the same time. NoSQL databases are BASE(Basically Available Soft state Eventually consistent) systems. These databases guarantee availability. These databases become consistent over time when they do not receive input.
-NoSQL databases in Big Data Ecosystem:
-
-The characteristics of the big data — Volume, Velocity and Variety. To address the problem of high volume of big data, we need highly scalable databases. NoSQL databases which are efficient on multiple nodes are highly scalable and are most suitable for Big Data ecosystem. Big Data comes in different formats, that is the Variety characteristic. Relational Databases are not suitable for this type of data because it follows a particular schema. NoSQL databases are suitable for semi-structured data and it’s flexibility with no fixed schema makes it more suitable to address the variety characteristic of the big data.
-
-NoSQL databases distributed computing, so data centres can be setup at any location on the globe using the NoSQL databases. This method can be used to allot a datacentre for a certain region to capture the data. this can decrease the velocity of data storage at each region. NoSQL databases can be used in this way to address the Velocity problem of the big data.
-
-Write on Medium
-Integration of NoSQL database in the Big Data ecosystem makes storing the data, analysis of the data easier and more efficient.
-
-NoSQL Databases in next 3–5 Years
-
-In my opinion, Big Data is the main driver for the NoSQL Database industry. The increase in the generation of unstructured data year to year will require systems which are highly scalable and can store data without any constraint on the format of generated data.
-
-With many big companies like Amazon and Oracle providing NoSQL services the NoSQL database industry is about to grow in the coming years. The fact that NoSQL is an open-source, which implies that these services are economical is also one of the reasons that many enterprises would shift to NoSQL databases.
-
-NoSQL databases are highly suitable for data analysis on images, videos, text, tweets which is an advantage over the relational databases.
-
-NoSQL doesn’t have a specific query language like SQL for relational databases that could be used to access databases from all the companies. This is a hindrance to the growth of the NoSQL databases currently, I expect, that there will be a standard query language in the coming years.
-
-With all these advantages and growth of industry, there will be increase in the human resources that could work with NoSQL databases.
-
-Support your findings comprehensive examples on how NoSQL databases are used today in the real world
-
-Craigslist is a classifieds and job posting community which serves 570 cities in 50 countries. 1.5 million classifieds are posted every day. MySQL has been used initially but they migrated to MongoDB, a NoSQL database because of it’s scalability and ability to accommodate schema changes on live database.
-
-Coursera6, is a online educational platform. It partners with universities around the globe to provide education. In 2014, it has 10million students. It moved from MySQL database to a NoSQL, Cassandra database. Coursera had problems with availability due to MySQL’s architecture. Cassandra solved this problem as it has high availability and flexible linear scalability, which let them to grow to any size
-
-Datasets that are difficult to store and analyze by any software database tool are referred to as big data. Due to the growth of data, an issue arises that based on recent fads in the IT region, how the data will be effectively processed. A requirement for ideas, techniques, tools, and technologies is been set for handling and transforming a lot of data into business value and knowledge. The major features of NoSQL solutions are stated below that help us to handle a large amount of data.
-https://aws.amazon.com/pt/nosql//
-https://www.ibm.com/think/topics/nosql-databases
+Data lakehouses combinam os recursos de warehouses e lakes em uma única solução de gerenciamento de dados. Um data lakehouse combina armazenamento de baixo custo com um mecanismo de consulta de alto desempenho e governança inteligente de metadados. Isso possibilita que as organizações armazenem grandes quantidades de dados estruturados e não estruturados e usem facilmente esses dados para esforços de IA, ML e análise de dados.
+--
+O que é o SPARK ?
+ O Spark não é um SGBD, mas sim um motor de processamento distribuído (ou data processing engine). Ele processa dados em larga escala usando clusters de computadores, mas não gerencia dados da mesma forma que um SGBD tradicional (como controle de concorrência ACID em nível de registro). Ele se integra a diversos SGBDs e sistemas de arquivo para processá-los
 
 ---
 
----
+Docker e Banco de Dados
 
-Tipos de Dados e Armazenamento
-
-Dados Semiestruturados
-
-São informações que não seguem um modelo rígido de tabela, mas possuem alguma organização, como tags ou marcadores. 
-
-Exemplos: XML, JSON,HTML.
-
-Esses dados são consumidos por bancos de dados como Azure Cosmos DB, MongoDB, Azure Table Storage, Apache Cassandra e outros.
+O Docker pode ser usado para criar uma instância de um banco de dados desejado (como MySQL). Ele é um contêiner que isola o ambiente do banco. Para utilizá-lo, é necessário instalar uma extensão ou cliente que se conecte ao contêiner.
 
 ---
 
-Dados Não Estruturados
+Data Mining (Mineração de Dados)
 
-Incluem fotos, vídeos, áudio, arquivos binários, etc. Podem ser armazenados no Azure Blob Storage (não "blobs da azure" como substantivo próprio).
+Métodos de mineração de dados incluem:
+
+· Regressão: identifica e analisa a relação entre variáveis, considerando a influência de outros fatores.
+
+---
+
+Data Wrangling
+
+É o processo de transformar e mapear dados de um formato "bruto" para outro mais adequado para uso.
 
 ---
 
-Tipos de Dados (Escalas de Mensuração)
+ETL vs ELT
 
-[Correção de terminologia: normalmente chamamos de "tipos de dados" ou "escalas de mensuração" em estatística]
 
-1. Dados Nominais: não possuem ordem ou hierarquia. Exemplos: cores, nomes de países, gênero.
-2. Dados Ordinais: possuem uma ordem definida. Exemplos: classificações de produtos (bom, médio, ruim), nível escolar.
-3. Dados Numéricos (Quantitativos): representam valores numéricos. Exemplos: idade, peso, temperatura.
+ETL (Extract, Transform, Load)
 
+· Extrai dados de fontes, transforma em um ambiente intermediário e carrega no destino final.
+· Indicado para dados estruturados e volumes menores.
+· Não suporta diretamente data lakes de forma nativa (sem adaptações).
+
+ELT (Extract, Load, Transform)
+
+· Carrega os dados diretamente no sistema de destino (ex: data lake) e depois aplica as transformações.
+· Indicado para grandes volumes de dados.
+· Suporta fontes estruturadas e não estruturadas, com escalabilidade em nuvem.
 
 
 ---
-#mercado de dados
 
-Engenheiro de dados
-desenho,costruçao
-sustençaos das soluçoes de dados
-preocupado em manter/organizar a pipeline dos dados de forma mais eficiente
- extraçao de dados de fonte geterogeneas,disponibilizar os dados a serem consumidos pelos analistas e cientistas de dados
+ OLTP also know as online transaction processing data base is build to store current transactions and enable fast aces to specific transactions for going business processe , it uses single data source , short transactions (small and simples queries ) with emphases on write many transactions latency sensitive,small pay load carga útil , use case general purpose.
 
-o papel do cientista de dados
-modelagem,reconhecimento de padroes e preciçoes
-busca responder perguntas atrelas ao contexto do negocio , buscando insights atras de tecnicas de modelagem
+ ---
+ olap 
+ online nalytical procedssing data whahouse is build to store lange quantities of historical data and enable fast complex queries ,whiich in portugues is names consultas, across all data,multiple data soucer,long transidions ,long and complex queries with emphase on read fwe transsations throught put,taxa  de transferencia, sensivel , lager payloud
+ ---
 
-ja o analista de dados
-criaçao de dashboard, apresentaçao visuaal dos dados
-busca compreender o funcionamento do negocio a  partir dos dados , realiza o diagnosticos , identificar possiveis motivos para comportamentos e verificar metricas
 
-PO
-
-[FALTANDO]
 ---
+
+Técnicas de Análise de Dados
+
+1. Descritiva (Descriptive): Gera relatórios de finanças e vendas. Responde "o que aconteceu?"
+2. Diagnóstica (Diagnostic): Complementa a análise descritiva, investigando causas. Responde "por que aconteceu?" Pode identificar anomalias.
+3. Preditiva (Predictive): Utiliza dados históricos para prever tendências. Emprega machine learning e estatística (redes neurais, árvores de decisão, regressão, classificação).
+4. Prescritiva (Prescriptive): Sugere ações para alcançar um resultado desejado. Responde "como fazer acontecer?"
+
+---
+
+Azure Synapse Analytics
+
+É uma plataforma de análise integrada que combém data warehouse e big data. Permite usar Spark, por exemplo.
+
+Suporta processos ETL e ELT. Pode ingerir dados de diversas fontes e enviá-los ao Power BI.
+
+---
+
+ELT no Azure Synapse
+
+[Correção de digitação e clareza:]
+
+A forma mais rápida e escalável de carregar dados no Synapse é usando tabelas externas com PolyBase ou o comando COPY. Esses recursos permitem acessar dados armazenados no Azure Blob Storage ou no Azure Data Lake Storage.
+
+Etapas do ELT:
+
+1. Extrair dados da fonte para um arquivo.
+2. Carregar os dados no Azure Blob Storage ou Azure Data Lake.
+3. Preparar os dados (estruturar, limpar, etc.).
+4. Carregar os dados em uma tabela staging usando PolyBase ou comando COPY.
+
+---
+
+Azure Blob Storage
+
+É um serviço de armazenamento de objetos, distribuído em várias máquinas, que pode armazenar texto e dados binários (blobs).
+
+
+
+ O que é uma read replica
+ é uma copia da instancia primaria que reflete as alteraçoes primarias em quase tempo real,pode funcionar como replica de leitura para soluçoes de leitura
+
+---
+
+ ORM (Object-Relational Mapping) é uma técnica de programação que conecta linguagens orientadas a objetos (como Java, Python, JS) a bancos de dados relacionais (SQL), mapeando tabelas para classes. Ele traduz automaticamente dados entre esses dois mundos, eliminando a necessidade de escrever SQL manualmente, o que aumenta a produtividade e a segurança.       
+
+---                         
+O Hibernate é um framework ORM (Mapeamento Objeto-Relacional) para Java, amplamente utilizado para persistir dados, simplificando a interação entre objetos Java e bancos de dados relacionais. Ele traduz automaticamente classes Java em tabelas e vice-versa, eliminando a necessidade de SQL manual para operações básicas (CRUD) e suportando bancos como MySQL e PostgreSQL          	                                      
+ •	Implementação JPA: É a implementação mais popular da especificação Java Persistence API (JPA), que padroniza o ORM em Java. Sim, o Hibernate é um framework ORM(Object-Relational Mapping - Mapeamento Objeto-Relacional) para Java, amplamente utilizado para mapear classes Java para tabelas de banco de dados relacional e tipos de dados Java para tipos SQL. Ele facilita a persistência de dados, eliminando a necessidade de escrever SQL manualmente para operações comuns Para Python, não existe uma versão direta do Hibernate, mas a alternativa padrão, mais robusta e similar é o SQLAlchemy. Ele permite mapear objetos Python para tabelas de banco de dados, oferecendo funcionalidades semelhantes de persistência e manipulação de dados
+
+---
+DAO (Data Access Object) é um padrão de projeto utilizado em programação para separar a regra de negócio da regra de acesso a dados. Ele encapsula todas as operações de banco de dados (CRUD: criar, ler, atualizar, deletar) em classes específicas, isolando o código SQL e aumentando a manutenção, coesão e segurança da aplicação ,em outras palavras possue entidades que contém nossas classes que vão ter um espelhamento de forma de interface abstraída que chamam os nossos medos das classe. No DAO temos o controller onde temos a aplicação e as ações e a conexão ,temos o modelo Dão que tem a interface , temos as enteiddades ou os objetos ou dados .
+
 
 ---
 Dentre as etapas de definição de um SGBD e seus banco de dados. Qual destas etapas está relacionada a implementação da estrutura e inserção dos dados no BD?
@@ -1358,11 +936,11 @@ Etapas do ELT:
 4. Carregar os dados em uma tabela staging usando PolyBase ou comando COPY.
 
 ---
-
+Dep
 Azure Blob Storage
 
-É um serviço de armazenamento de objetos, distribuído em várias máquinas, que pode armazenar texto e dados binários (blobs).
-
+É um serviço de armazenamento de objetos, distribuído em várias máquinas, que pode armazenar texto e dados binários (blobs).                                                         __________________
+API _>allows for the automated retrieval of data from websites -> beautiful soup 
 ---
 
  OLTP also know as online transaction processing data base is build to store current transactions and enable fast aces to specific transactions for going business processe , it uses single data source , short transactions (small and simples queries ) with emphases on write many transactions latency sensitive,small pay load carga útil , use case general purpose.
@@ -1383,8 +961,66 @@ As máquinas cliente olerecem ao ajudaria as interfaces apropriadas para esses s
 
 Os cliente host (máquina) utilizam algum recurso de rede computational,isto é o cliente e uma máquina que focerece capacidade de intecarr com usuário e o processamento local 
 
-já o servidor especializado tem: posso-me uma função específica como servidor de arquivos que mantém os arquivos dos cliente que podem ser utilizado ao conectar uma série de computadores como cliente.     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ESAF - MI - 2012 - Nível Superior
+já o servidor especializado tem: posso-me uma função específica como servidor de arquivos que mantém os arquivos dos cliente que podem ser utilizado ao conectar uma série de computadores como cliente.              ————————————————————
+ ORM (Object-Relational Mapping) é uma técnica de programação que conecta linguagens orientadas a objetos (como Java, Python, JS) a bancos de dados relacionais (SQL), mapeando tabelas para classes. Ele traduz automaticamente dados entre esses dois mundos, eliminando a necessidade de escrever SQL manualmente, o que aumenta a produtividade e a segurança.       ———————————————————-                                                                                                                                                                                                            
+**preciso achar onde encaixar esse trecho**
+
+
+#O que é modelagem de dados?
+Modelagem relaciona-se à ideia de representar algo que existe ou existirá, ou seja, representar o banco de dados que será criado, demonstrando aspectos relevantes para sua implantação. A ideia é representar como serão construídas as estruturas de dados que darão suporte aos processos de negócio, como esses dados estarão organizados e quais relacionamentos pretende-se estabelecer entre eles.
+
+Vamos pensar no exemplo de um estoque informatizado de um supermercado: o sistema deve identificar os dados de um produto que passou pelo caixa, relacioná-los com o que há no BD e registrar a saída do item. Esses relacionamentos devem ser previstos antes de o banco de dados ser criado, ainda no momento de projeto, por isso a modelagem é fundamental.
+
+1. Independência de dados, que é capacidade de modificar a definição dos esquemas de determinado nível, sem afetar o esquema de nível superior
+2. Independência Lógica dos Dados: trata da capacidade de alterar o esquema conceitual sem precisar modificar os esquemas externos ou programas/aplicações
+3. Independência Física dos Dados: capacidade de alterar o esquema interno sem ter de alterar o esquema conceitual.
+---
+
+1. Projetos de Banco de DadosProjetos do BD: estrutura ou projeto de um banco de dados em diferentes níveis de abstração por meio de Modelos:
+Modelo Conceitual (alto nível):  conceitos que são mais próximos ao modo como muitos usuários compreendem os dados -> “diagramas”
+o nivel de abstração é alto,nao possue dependencia,comprensao pelo usuario final sendo facil, exemplo de um modelo conceitural é o modelo entedidade relacionamento que iremos aborda posteriomente
+
+2. Modelo Lógico:  podem ser facilmente entendidos pelos usuários finais, mas que não está muito longe do modo como os dados são organizados e armazenados no computador -> “tabelas”
+ja o modelo logico, o nivel de abstraçao é medio,possue dependecia com algum software (tipo sgbd), a compreensao pelo usuario final é medio, o exemplo de modelo logico que temos é o modelo relacional
+
+
+3. Modelo Físico (baixo nível): descrevem os detalhes de como os dados são armazenados no computador -> “programação”,
+dentre as tres,é o aque o nivel de abstraçao é mais baixo,depende tanto do hardware e do softare(sgbd especitifico),a  compreensao pelo usuario final  é dificil.
+
+
+Flexibilidade
+
+É fácil adicionar, atualizar ou excluir tabelas, relações e fazer outras alterações em dados sempre que necessário, sem alterar a estrutura geral do banco de dados ou afetar aplicativos existentes.
+
+Conformidade com ACID
+
+Os bancos de dados relacionais são compatíveis com o desempenho da ACID (atomicidade, consistência, isolamento e durabilidade) para garantir a validade dos dados independentemente de erros, falhas ou outros possíveis erros.
+
+Facilidade de usar
+
+É fácil executar consultas complexas usando SQL. Com isso, até mesmo usuários não técnicos aprendam a interagir com o banco de dados.
+
+Colaboração
+
+Várias pessoas podem operar e acessar dados ao mesmo tempo. O bloqueio integrado impede o acesso simultâneo aos dados quando eles estão sendo atualizados. 
+
+Segurança integrada
+
+A segurança baseada em papéis garante que o acesso aos dados seja limitado a usuários específicos.
+
+Normalização do banco de dados
+
+Os bancos de dados relacionais usam uma técnica de design conhecida como normalização que reduz a redundância e melhora a integridade dos dados. 
+----
+
+Comentário: Cuidado para não confundir DA com DBA. A responsabilidade de manter o dicionário de dados é do DA, enquanto que o backup, por exemplo, é o DBA quem faz.
+
+CESPE - 2010 - Banco da Amazônia - Técnico Científico / Tecnologia da Informação
+Enquanto o AD se preocupa com o gerenciamento dos dados como patrimônio da empresa, o administrador de banco de dados (ABD) é 
+---
+
+
+ESAF - MI - 2012 - Nível Superior
 O Administrador de Dados
 auxilia os gerentes de projeto na definição dos programas de seus projetos.  
 desenvolve um modelo de dados com abrangência operacional.
@@ -1490,3 +1126,4 @@ https://cloud.google.com/learn/what-is-a-relational-database
 
 imagem para key primaria , key estrangeira relaçao , relacional
 https://www.gstatic.com/bricks/image/_j-DAQG6tx5MwOwhdNFkHMou4fWHRuEbzYr3wEaRClkCnC3W2TR8CnMsAvmVX-rgOICpWX-wrBPc.png
+
